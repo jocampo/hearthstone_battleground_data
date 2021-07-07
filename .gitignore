@@ -1,4 +1,5 @@
-/res/bg_data.csv
+/res/*bg_data.csv
 /venv/*
 credentials.json
 token.json
+__pycache__**
