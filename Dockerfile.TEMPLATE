@@ -1,0 +1,4 @@
+FROM postgres
+# Fill out the desired password in the next line
+ENV POSTGRES_PASSWORD
+ENV POSTGRES_DB hs_bg_logs
