@@ -1,0 +1,6 @@
+db:
+    user:
+    pass:
+    host:
+    db_name:
+    port: 5432

@@ -5,3 +5,4 @@ token.json
 __pycache__**
 alembic.ini
 Dockerfile
+conf/conf.yaml
