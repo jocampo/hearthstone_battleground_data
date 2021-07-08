@@ -1,0 +1,12 @@
+#####
+The idea of this doc is to have some common commands handy or as a reference in order to create aliases and functions locally
+#####
+
+# docker
+docker build -t hs-bg-logs-db-img ./
+docker run --name hs-bg-logs-db-container -p 5432:5432 hs-bg-logs-db-img
+
+
+# alembic
+alembic revision -m "create account table"
+alembic upgrade head
