@@ -11,7 +11,7 @@ class ConfigManager(object):
         Returns a dict based on the contents of the conf.yaml file
         :return: dictionary with the config values
         """
-        with open("./conf.yaml", "r", encoding="utf-8") as config_file:
+        with open("./conf/conf.yaml", "r", encoding="utf-8") as config_file:
             config_values = safe_load(config_file)
             config_file.close()
         return config_values
