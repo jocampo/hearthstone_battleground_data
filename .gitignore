@@ -1,4 +1,4 @@
-/res/*bg_data.csv
+/res/*.csv
 /venv/*
 credentials.json
 token.json
