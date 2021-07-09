@@ -1,6 +1,6 @@
 db:
     user:
-    pass:
+    password:
     host:
     db_name:
     port: 5432
