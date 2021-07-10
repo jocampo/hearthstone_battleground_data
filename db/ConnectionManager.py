@@ -9,9 +9,7 @@ from utils.singleton import Singleton
 class ConnectionManager(metaclass=Singleton):
     def __init__(self):
         self.__engine = create_engine(
-            ConfigManager.get_db_connection_string(),
-            echo=True,  # TODO: comment this out or delete it
-            future=True
+            ConfigManager.get_db_connection_string()
         )
         self.__session = None
 
