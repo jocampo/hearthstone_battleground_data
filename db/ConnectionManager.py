@@ -13,6 +13,7 @@ class ConnectionManager(metaclass=Singleton):
             echo=True,  # TODO: comment this out or delete it
             future=True
         )
+        self.__session = None
 
     def get_session(self):
         if not self.__session:
