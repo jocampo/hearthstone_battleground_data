@@ -10,9 +10,10 @@ from google.oauth2.credentials import Credentials
 from entities import BattlegroundMatchLog
 from spreadsheet_api_client.scope import APIScope
 from spreadsheet_api_client.value_input_option import ValueInputOption
+from utils.singleton import Singleton
 
 
-class SpreadsheetHandler(object):
+class SpreadsheetHandler(metaclass=Singleton):
 
     def __init__(self):
         creds = None
