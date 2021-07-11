@@ -13,4 +13,4 @@ class HeroDAO(AbstractDAO):
 
     @staticmethod
     def list() -> list[Hero]:
-        return [x for x in HeroDAO.get_connection().query(Hero)]
+        return [x for x in HeroDAO.get_connection().query(Hero).all()]
