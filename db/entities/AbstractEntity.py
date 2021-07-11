@@ -1,11 +1,10 @@
-import sqlalchemy.orm
 from sqlalchemy.orm import declared_attr
 from sqlalchemy.schema import Column
 from sqlalchemy.sql import func
 from sqlalchemy.types import Integer, DateTime
 
 
-class AbstractEntity():
+class AbstractEntity:
     @declared_attr
     def __tablename__(cls):
         return cls.__name__.lower()
