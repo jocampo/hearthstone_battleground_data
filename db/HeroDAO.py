@@ -18,7 +18,6 @@ class HeroDAO(AbstractDAO):
                 .filter(Hero.name == hero_name)
                 .one())
 
-
     @staticmethod
     def list() -> list[Hero]:
         return [x for x in HeroDAO.get_connection().query(Hero).all()]
