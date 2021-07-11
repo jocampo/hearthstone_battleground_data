@@ -10,3 +10,5 @@ docker run --name hs-bg-logs-db-container -p 5432:5432 hs-bg-logs-db-img
 # alembic
 alembic revision -m "create account table"
 alembic upgrade head
+alembic downgrade -1
+alembic history
