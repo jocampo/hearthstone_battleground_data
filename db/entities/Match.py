@@ -12,11 +12,11 @@ class Match(Base):
         Perform data transformations as needed and load them into the class data
         :param record: record as loaded from the CSV
         """
-        self.starting_mmr = record.starting_mmr
-        self.mmr_delta = int(record.mmr_delta) # '+15'
+        self.starting_mmr = int(record.starting_mmr)
+        self.mmr_delta = int(record.mmr_delta)
         self.result = record.result
-        self.last_turn = int(record.last_turn) # '10'
-        self.is_prize_game = record.prize_game
+        self.last_turn = int(record.last_turn)
+        self.is_prize_game = bool(record.prize_game)
         self.comments = record.comments
 
     player_id = Column(

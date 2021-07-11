@@ -65,8 +65,6 @@ def store_matches_db(records: list[BattlegroundMatchLog]):
                 hero.name = record.hero
 
                 HeroDAO.create(hero)
-                AbstractDAO.get_connection().commit() # ?
-                AbstractDAO.get_connection().begin()
 
                 hero = HeroDAO.get_by_name(record.hero)  # get the record we just inserted into the db
                 heroes.append(hero)
@@ -78,7 +76,7 @@ def store_matches_db(records: list[BattlegroundMatchLog]):
             match.player_id = player_id
 
             MatchDAO.create(match)
-            current_mmr = record.starting_mmr + int(record.mmr_delta)
+            current_mmr = int(record.starting_mmr) + int(record.mmr_delta)
 
         # Update the player's mmr with the last record's info
         player = PlayerDAO.get(player_id)
@@ -93,11 +91,9 @@ def store_matches_db(records: list[BattlegroundMatchLog]):
 
 if __name__ == '__main__':
     fl = FileLoader(PATH, FILE_NAME)
-    bg_records = fl.old_load_file()
-    # bg_records = fl.load_file()
+    bg_records = fl.load_file()
 
     store_matches_db(bg_records)
-    exit()
     if len(bg_records) == 0:
         raise Exception("No new BG records were found for upload. Exiting...")
 
