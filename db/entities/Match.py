@@ -34,6 +34,16 @@ class Match(Base):
         Integer,
         nullable=False)
 
+    result = Column(
+        "result",
+        String,
+        nullable=False)
+
+    mmr_delta = Column(
+        "mmr_delta",
+        Integer,
+        nullable=False)
+
     comments = Column(
         "comments",
         String)
