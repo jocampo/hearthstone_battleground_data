@@ -9,5 +9,5 @@ Base = declarative_base(cls=AbstractEntity)
 
 
 class Hero(Base):
-
-    thumbnail = Column("thumbnail", String, nullable=False)
+    name = Column("name", String(200), nullable=False)
+    thumbnail = Column("thumbnail", String)
