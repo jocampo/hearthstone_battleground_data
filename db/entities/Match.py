@@ -1,13 +1,9 @@
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.schema import Column
 from sqlalchemy import ForeignKey
-
+from sqlalchemy.schema import Column
 from sqlalchemy.types import Integer, String, Boolean
 
-from db.entities.AbstractEntity import AbstractEntity
+from db.entities import Base
 from entities import BattlegroundMatchLog
-
-Base = declarative_base(cls=AbstractEntity)
 
 
 class Match(Base):
