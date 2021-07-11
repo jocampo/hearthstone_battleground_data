@@ -5,11 +5,23 @@ from sqlalchemy import ForeignKey
 from sqlalchemy.types import Integer, String, Boolean
 
 from db.entities.AbstractEntity import AbstractEntity
+from entities import BattlegroundMatchLog
 
 Base = declarative_base(cls=AbstractEntity)
 
 
 class Match(Base):
+    def load_from_record(self, record: BattlegroundMatchLog):
+        """
+        Perform data transformations as needed and load them into the class data
+        :param record: record as loaded from the CSV
+        """
+        self.starting_mmr = record.starting_mmr
+        self.mmr_delta = int(record.mmr_delta) # '+15'
+        self.result = record.result
+        self.last_turn = int(record.last_turn) # '10'
+        self.is_prize_game = record.prize_game
+        self.comments = record.comments
 
     player_id = Column(
         "player_id",
