@@ -51,7 +51,7 @@ class FileLoader(object):
         with an example of the format that has to be followed.
         """
         today = datetime.today().strftime("%Y%m%d")
-        versioned_file_name = f"test{today}_{self.__file_name}"
+        versioned_file_name = f"{today}_{self.__file_name}"
         os.rename(f"{self.__file_path}/{self.__file_name}", f"{self.__file_path}/{versioned_file_name}")
         with open(f"{self.__file_path}/{self.__file_name}", "w") as file:
             file.write(self.EXAMPLE_TEXT_FORMAT)

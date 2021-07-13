@@ -15,7 +15,6 @@ FILE_NAME = "bg_data.csv"
 """
     TODO List:
     - use logger
-    - store data in db for additional structured usage
     - schedule this task somewhere to be done once per day? week? something.
     - setup some graphs in excel
     - come up with a front-end for this? m
