@@ -1,3 +1,7 @@
+import functools
+import os
+import shutil
+
 from db.AbstractDAO import AbstractDAO
 from db.HeroDAO import HeroDAO
 from db.MatchDAO import MatchDAO
@@ -20,11 +24,34 @@ FILE_NAME = "bg_data.csv"
     - Deploy db on a private instance
     - Setup a chron job to process the match logs every 24h
     - Deploy said service on a private instance
+        - Fix less-than-happy scenarios and revert/not-commit db ops when upload fails?
+        - Handle token expiring scenario
     - Leverage stats. Generate insights from data stored
         - Win-rate per hero
         - Look into comments for comps with best results
     - Add minion types per game (once data input is automated)
 """
+
+def move_screenshots():
+    """
+    Utility method that really doesn't belong here :^)
+    """
+    name_pattern = "Hearthstone Screenshot"
+    desktop_path = "C:\\Users\\jorge\\Desktop"
+    ss_dir_name = "HS Screenshots"
+
+    join_path_desktop = functools.partial(os.path.join, desktop_path)
+
+    full_dir_path = join_path_desktop(ss_dir_name)
+    if not os.path.isdir(full_dir_path):
+        os.mkdir(full_dir_path)
+
+    files = [f for f in os.listdir(desktop_path)
+             if os.path.isfile(join_path_desktop(f))
+             and f.startswith(name_pattern)]
+
+    for file in files:
+        shutil.move(join_path_desktop(file), join_path_desktop(ss_dir_name))
 
 
 def store_player(player: Player):
