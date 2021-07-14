@@ -13,11 +13,17 @@ PATH = "./res"
 FILE_NAME = "bg_data.csv"
 
 """
-    TODO List:
-    - use logger
-    - schedule this task somewhere to be done once per day? week? something.
-    - setup some graphs in excel
-    - come up with a front-end for this? m
+    TODO List (eventually):
+    - Set up a centralized logger
+    - Client app that writes match data into file (look into hooking onto unity events)
+    - Move data dump file into s3
+    - Deploy db on a private instance
+    - Setup a chron job to process the match logs every 24h
+    - Deploy said service on a private instance
+    - Leverage stats. Generate insights from data stored
+        - Win-rate per hero
+        - Look into comments for comps with best results
+    - Add minion types per game (once data input is automated)
 """
 
 
