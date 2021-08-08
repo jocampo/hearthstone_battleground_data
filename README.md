@@ -1,5 +1,5 @@
-# hearthstone_battleground_data
-uploads hearthstone match data to a google spreadsheet (initially anyway)
+# Hearthstone Battleground Data
+I created this very simple app to parse and upload my bg data. It still has a LONG way to go for it to have a smooth workflow, but for the time being, I've stopped development on it.
 
 Reads from a local text file (template included) that contains battlegrounds match information. This information is later parsed and stored in a db (for now in a simple docker container) and then uploads the data into a google spreadsheet so it can be leveraged in other ways (easy graphs, simple calculations.
 
